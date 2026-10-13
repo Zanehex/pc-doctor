@@ -11,22 +11,19 @@ def byte_CON(num_bytes):
 
 def check_ram():
     mem = psutil.virtual_memory()
-    total = byte_CON(mem.total)
-    used = byte_CON(mem.used)
+    total1, total2 = byte_CON(mem.total)
+    used1, used2 = byte_CON(mem.used)
     status = ""
     percent = mem.percent
     if percent <= 50:
-        status = "Ok " + str(percent)
-    elif percent > 50 & percent <= 80:
-        status = "Warning " + str(percent)
-    elif percent > 80:
-        status = "Critical " + str(percent)
-    Ram = {"total": str(total), "used": str(used), "status": status}
+        status = "Ok"
+    elif percent <= 80:
+        status = "Warning"
+    else:
+        status = "Critical"
+    Ram = {"name": "check_ram", "total": str(f"{total1} GB, {total2} MB"), "used": str(f"{used1} GB, {used2} MB"), "status": status, "percent": percent}
     return Ram
 
-ram = check_ram()
-    
-print(ram)        
 
 
 
