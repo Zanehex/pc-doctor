@@ -21,7 +21,7 @@ def check_ram():
     # status checks.
     status = check_status(percent)
     # defining the dict and returning it. 
-    Ram = {"name": "check_ram", "total": str(f"{total1} GB, {total2} MB"), "used": str(f"{used1} GB, {used2} MB"), "status": status, "percent": percent}
+    Ram = {"Name": "check_ram", "Status": status, "total": str(f"{total1} GB, {total2} MB"), "used": str(f"{used1} GB, {used2} MB"), "percent": percent}
     return Ram
 
 
