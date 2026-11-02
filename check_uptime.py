@@ -1,7 +1,8 @@
+# Imports
 import time 
 import psutil
 
-
+# function; grabs the raw uptime in seconds, converts the seconds into weeks, days, hours, returning this as a dict 
 def check_uptime():
     # Raw second's answer 
     uptime = time.time() - psutil.boot_time()
